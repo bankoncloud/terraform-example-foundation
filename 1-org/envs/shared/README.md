@@ -59,6 +59,7 @@
 | scc\_notifications\_project\_budget\_amount | The amount to use as the budget for the SCC notifications project. | `number` | `1000` | no |
 | skip\_gcloud\_download | Whether to skip downloading gcloud (assumes gcloud is already available outside the module. If set to true you, must ensure that Gcloud Alpha module is installed.) | `bool` | `true` | no |
 | terraform\_service\_account | Service account email of the account to impersonate to run Terraform. | `string` | n/a | yes |
+| log\_export\_storage\_retention\_policy | Configuration of the bucket's data retention policy for how long objects in the bucket should be retained. | <pre>{<br> is_locked = bool<br> retention_period_days = number<br>}</pre> | `null`
 
 ## Outputs
 

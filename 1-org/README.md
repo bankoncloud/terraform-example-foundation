@@ -93,6 +93,10 @@ To check if it already exists run:
 gcloud scc notifications describe <scc_notification_name> --organization=<org_id>
 ```
 
+#### Cloud Storage Retention Policy for Logs
+
+FIs should configure the `log_export_storage_retention_policy` variable in `terraform.tfvars` to set a minimum retention period for org-level logs.
+
 ### Deploying with Cloud Build
 
 1. Clone the policy repo based on the Terraform output from the previous section.
