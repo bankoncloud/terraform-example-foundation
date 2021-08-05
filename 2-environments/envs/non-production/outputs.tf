@@ -16,25 +16,25 @@
 
 output "env_folder" {
   description = "Environment folder created under parent."
-  value       = join("", module.env.env_folder)
+  value       = "${join("", module.env.env_folder)}"
 }
 
 output "monitoring_project_id" {
   description = "Project for monitoring infra."
-  value       = join("", module.env.monitoring_project_id)
+  value       = "${join("", module.env.monitoring_project_id)}"
 }
 
 output "base_shared_vpc_project_id" {
   description = "Project for base shared VPC."
-  value       = join("", module.env.base_shared_vpc_project_id)
+  value       = "${join("", module.env.base_shared_vpc_project_id)}"
 }
 
 output "restricted_shared_vpc_project_id" {
   description = "Project for restricted shared VPC."
-  value       = join("", module.env.restricted_shared_vpc_project_id)
+  value       = "${join("", module.env.restricted_shared_vpc_project_id)}"
 }
 
 output "env_secrets_project_id" {
   description = "Project for environment related secrets."
-  value       = join("", module.env.env_secrets_project_id)
+  value       = "${join("", module.env.env_secrets_project_id)}"
 }
