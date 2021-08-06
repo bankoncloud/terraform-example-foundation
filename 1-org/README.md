@@ -96,6 +96,17 @@ To check if it already exists run:
 gcloud scc notifications describe <scc_notification_name> --organization=<org_id>
 ```
 
+#### 💬 Cloud Storage Retention Policy for Logs
+
+FIs should configure the `log_export_storage_retention_policy` variable in `terraform.tfvars` to set a minimum retention period for org-level logs.
+
+#### 💬 Organization Policy Constraints
+
+FIs should review `org_policy_mas_abs.tf` to review the following org-level constraints:
+
+- `constraints/compute.restrictNonConfidentialComputing` to restrict non-Confidential Computing resources from being created
+- `constraints/storage.retentionPolicySeconds` to enforce Cloud Storage retention policy from a list of retention periods (by default, 1 hour and 30 days are configured)
+
 ### Deploying with Cloud Build
 
 1. Clone the policy repo based on the Terraform output from the previous section.

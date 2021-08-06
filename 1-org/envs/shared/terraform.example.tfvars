@@ -40,3 +40,9 @@ scc_notification_name = "scc-notify"
 //create_access_context_manager_access_policy = false
 
 //enable_hub_and_spoke = true
+
+// Configuring the Cloud Storage retention policy for logging for compliance use cases
+# log_export_storage_retention_policy = {
+#   is_locked             = false
+#   retention_period_days = 1
+# }
