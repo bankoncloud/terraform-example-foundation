@@ -124,6 +124,10 @@ If you are not able to use Dedicated or Partner Interconnect, you can also use a
 1. In the file `vpn.tf`, update the values for `environment`, `vpn_psk_secret_name`, `on_prem_router_ip_address1`, `on_prem_router_ip_address2` and `bgp_peer_asn`.
 1. Verify other default values are valid for your environment.
 
+### 💬 Example Bank of Anthos Workload
+
+If you intend to run the example [Bank of Anthos](https://github.com/GoogleCloudPlatform/terraform-example-foundation-app) workload, we recommend that you review the repo first before proceeding below. You will be required to set `enable_hub_and_spoke` to `true` and use hub-and-spoke instead of Shared VPCs.
+
 ### Deploying with Cloud Build
 
 1. Clone repo.
@@ -170,24 +174,28 @@ If you are not able to use Dedicated or Partner Interconnect, you can also use a
    git push --set-upstream origin plan
    ```
 1. Review the plan output in your Cloud Build project https://console.cloud.google.com/cloud-build/builds?project=YOUR_CLOUD_BUILD_PROJECT_ID
-1. Merge changes to production.
-   ```
-   git checkout -b production
-   git push origin production
-   ```
-1. Review the apply output in your Cloud Build project https://console.cloud.google.com/cloud-build/builds?project=YOUR_CLOUD_BUILD_PROJECT_ID
-1. After production has been applied, apply development.
 1. Merge changes to development.
    ```
    git checkout -b development
    git push origin development
    ```
+
 1. Review the apply output in your Cloud Build project https://console.cloud.google.com/cloud-build/builds?project=YOUR_CLOUD_BUILD_PROJECT_ID
+
+Please continue only if you have enabled the `non-production` and `production` environments. Otherwise, you may stop here.
+
 1. After development has been applied, apply non-production.
 1. Merge changes to non-production.
    ```
    git checkout -b non-production
    git push origin non-production
+   ```
+1. Review the apply output in your Cloud Build project https://console.cloud.google.com/cloud-build/builds?project=YOUR_CLOUD_BUILD_PROJECT_ID
+1. After non-production has been applied, apply production.
+1. Merge changes to production.
+   ```
+   git checkout -b production
+   git push origin production
    ```
 1. Review the apply output in your Cloud Build project https://console.cloud.google.com/cloud-build/builds?project=YOUR_CLOUD_BUILD_PROJECT_ID
 1. You can now move to the instructions in the step [4-projects](../4-projects/README.md).
@@ -248,23 +256,28 @@ If you are not able to use Dedicated or Partner Interconnect, you can also use a
     ```
     - Assuming you configured an automatic trigger in your Jenkins Master (see [Jenkins sub-module README](../0-bootstrap/modules/jenkins-agent)), this will trigger a plan. You can also trigger a Jenkins job manually. Given the many options to do this in Jenkins, it is out of the scope of this document see [Jenkins website](http://www.jenkins.io) for more details.
 1. Review the plan output in your Master's web UI.
-1. Merge changes to production branch.
-   ```
-   git checkout -b production
-   git push origin production
-   ```
-1. Review the apply output in your Master's web UI (you might want to use the option to "Scan Multibranch Pipeline Now" in your Jenkins Master UI).
-1. After production has been applied, apply development and non-production.
 1. Merge changes to development
    ```
    git checkout -b development
    git push origin development
    ```
 1. Review the apply output in your Master's web UI (you might want to use the option to "Scan Multibranch Pipeline Now" in your Jenkins Master UI).
+
+Please continue only if you have enabled the `non-production` and `production` environments. Otherwise, you may stop here.
+
+1. After development has been applied, apply production and non-production.
+
+1. Review the apply output in your Master's web UI (you might want to use the option to "Scan Multibranch Pipeline Now" in your Jenkins Master UI).
 1. Merge changes to non-production.
    ```
    git checkout -b non-production
    git push origin non-production
+   ```
+1. Review the apply output in your Master's web UI (you might want to use the option to "Scan Multibranch Pipeline Now" in your Jenkins Master UI).
+1. Merge changes to production branch.
+   ```
+   git checkout -b production
+   git push origin production
    ```
 1. Review the apply output in your Master's web UI (you might want to use the option to "Scan Multibranch Pipeline Now" in your Jenkins Master UI).
 
