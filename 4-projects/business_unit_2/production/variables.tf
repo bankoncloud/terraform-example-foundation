@@ -47,7 +47,7 @@ variable "perimeter_name" {
 
 variable "peering_module_depends_on" {
   description = "List of modules or resources peering module depends on."
-  type        = list
+  type        = list(any)
   default     = []
 }
 
@@ -119,13 +119,13 @@ variable "secrets_prj_suffix" {
 variable "location_kms" {
   description = "Case-Sensitive Location for KMS Keyring (Should be same region as the GCS Bucket)"
   type        = string
-  default     = "us"
+  default     = "asia"
 }
 
 variable "location_gcs" {
   description = "Case-Sensitive Location for GCS Bucket (Should be same region as the KMS Keyring)"
   type        = string
-  default     = "US"
+  default     = "ASIA"
 }
 
 variable "keyring_name" {

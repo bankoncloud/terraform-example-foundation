@@ -18,9 +18,9 @@ org_id = "000000000000"
 
 terraform_service_account = "org-terraform@prj-b-seed-2334.iam.gserviceaccount.com"
 
-default_region1 = "us-central1"
+default_region1 = "asia-southeast1"
 
-default_region2 = "us-west1"
+default_region2 = "asia-southeast2"
 
 // The DNS name of peering managed zone. Must end with a period.
 domain = "example.com."
