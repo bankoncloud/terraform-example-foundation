@@ -62,16 +62,6 @@ The purpose of this step is to setup development, non-production, and production
 
 Please refer to [troubleshooting](../docs/TROUBLESHOOTING.md) if you run into issues during this step.
 
-### 💬 Projects quota
-
-If you do not have sufficient projects quota, we recommend that you deploy only the `development` environment. It is recommended to modify the following attributes in [`terraform.example.tfvars`](./terraform.example.tfvars):
-
-```
-enable_development = true
-enable_non_production = false
-enable_production = false
-```
-
 ## Usage
 
 **Note:** If you are using MacOS, replace `cp -RT` with `cp -R` in the relevant

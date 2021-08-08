@@ -145,19 +145,3 @@ variable "enable_hub_and_spoke_transitivity" {
   type        = bool
   default     = false
 }
-
-
-variable "enable_development" {
-  description = "To enable creation of the development environment."
-  type        = bool
-}
-
-variable "enable_non_production" {
-  description = "To enable creation of the non-production environment."
-  type        = bool
-}
-
-variable "enable_production" {
-  description = "To enable creation of the production environment."
-  type        = bool
-}
