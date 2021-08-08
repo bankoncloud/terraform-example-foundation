@@ -32,8 +32,3 @@ domain = "example.com."
 //enable_hub_and_spoke = true
 
 //enable_hub_and_spoke_transitivity = true
-
-// Enable or disable creation of each environment, to save on project quotas
-enable_development = true
-enable_non_production = false
-enable_production = false

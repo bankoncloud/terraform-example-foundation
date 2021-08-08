@@ -152,7 +152,6 @@ module "restricted_shared_vpc" {
 
 module "base_shared_vpc" {
   source                        = "../../modules/base_shared_vpc"
-  count                         = var.enable_development ? 1 : 0
   project_id                    = local.base_project_id
   environment_code              = local.environment_code
   private_service_cidr          = local.base_private_service_cidr

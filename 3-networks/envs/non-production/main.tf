@@ -96,7 +96,6 @@ data "google_projects" "base_host_project" {
 *****************************************/
 module "restricted_shared_vpc" {
   source                           = "../../modules/restricted_shared_vpc"
-  count                            = var.enable_non_production ? 1 : 0
   project_id                       = local.restricted_project_id
   project_number                   = local.restricted_project_number
   environment_code                 = local.environment_code

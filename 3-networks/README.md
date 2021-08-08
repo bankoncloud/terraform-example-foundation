@@ -69,16 +69,6 @@ The purpose of this step is to:
 
    **Note:** Make sure that you use the same version of Terraform throughout this series. Otherwise, you might experience Terraform state snapshot lock errors.
 
-### 💬 Projects quota
-
-If you do not have sufficient projects quota, we recommend that you deploy only the `development` environment. It is recommended to modify the following attributes in [`terraform.example.tfvars`](./terraform.example.tfvars):
-
-```
-enable_development = true
-enable_non_production = false
-enable_production = false
-```
-
 ### Troubleshooting
 
 Please refer to [troubleshooting](../docs/TROUBLESHOOTING.md) if you run into issues during this step.
