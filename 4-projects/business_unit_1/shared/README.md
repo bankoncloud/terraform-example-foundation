@@ -7,7 +7,7 @@
 | alert\_spent\_percents | A list of percentages of the budget to alert on when threshold is exceeded | `list(number)` | <pre>[<br>  0.5,<br>  0.75,<br>  0.9,<br>  0.95<br>]</pre> | no |
 | billing\_account | The ID of the billing account to associated this project with | `string` | n/a | yes |
 | budget\_amount | The amount to use as the budget | `number` | `1000` | no |
-| default\_region | Default region to create resources where applicable. | `string` | `"us-central1"` | no |
+| default\_region | Default region to create resources where applicable. | `string` | `"asia-southeast1"` | no |
 | folder\_prefix | Name prefix to use for folders created. Should be the same in all steps. | `string` | `"fldr"` | no |
 | org\_id | The organization id for the associated services | `string` | n/a | yes |
 | parent\_folder | Optional - for an organization with existing projects or for development/validation. It will place all the example foundation resources under the provided folder instead of the root organization. The value is the numeric folder ID. The folder must already exist. Must be the same value used in previous step. | `string` | `""` | no |

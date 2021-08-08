@@ -22,7 +22,7 @@ group_org_admins = "gcp-organization-admins@example.com"
 
 group_billing_admins = "gcp-billing-admins@example.com"
 
-default_region = "us-central1"
+default_region = "asia-southeast1"
 
 // Optional - for an organization with existing projects or for development/validation.
 // Uncomment this variable to place all the example foundation resources under

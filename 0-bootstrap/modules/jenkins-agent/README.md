@@ -22,7 +22,7 @@ module "jenkins_bootstrap" {
   folder_id                               = "<FOLDER_ID>"
   billing_account                         = "<BILLING_ACCOUNT_ID>"
   group_org_admins                        = "gcp-organization-admins@example.com"
-  default_region                          = "us-central1"
+  default_region                          = "asia-southeast1"
   terraform_service_account               = "<SERVICE_ACCOUNT_EMAIL>" # normally module.seed_bootstrap.terraform_sa_email
   terraform_sa_name                       = "<SERVICE_ACCOUNT_NAME>" # normally module.seed_bootstrap.terraform_sa_name
   terraform_state_bucket                  = "<GCS_STATE_BUCKET_NAME>" # normally module.seed_bootstrap.gcs_bucket_tfstate
@@ -54,7 +54,7 @@ module "jenkins_bootstrap" {
 | activate\_apis | List of APIs to enable in the CICD project. | `list(string)` | <pre>[<br>  "serviceusage.googleapis.com",<br>  "servicenetworking.googleapis.com",<br>  "compute.googleapis.com",<br>  "logging.googleapis.com",<br>  "bigquery.googleapis.com",<br>  "cloudresourcemanager.googleapis.com",<br>  "cloudbilling.googleapis.com",<br>  "iam.googleapis.com",<br>  "admin.googleapis.com",<br>  "appengine.googleapis.com",<br>  "storage-api.googleapis.com"<br>]</pre> | no |
 | bgp\_peer\_asn | BGP ASN for peer cloud routes. | `number` | `"64513"` | no |
 | billing\_account | The ID of the billing account to associate projects with. | `string` | n/a | yes |
-| default\_region | Default region to create resources where applicable. | `string` | `"us-central1"` | no |
+| default\_region | Default region to create resources where applicable. | `string` | `"asia-southeast1"` | no |
 | folder\_id | The ID of a folder to host this project | `string` | `""` | no |
 | group\_org\_admins | Google Group for GCP Organization Administrators | `string` | n/a | yes |
 | jenkins\_agent\_gce\_machine\_type | Jenkins Agent GCE Instance type. | `string` | `"n1-standard-1"` | no |

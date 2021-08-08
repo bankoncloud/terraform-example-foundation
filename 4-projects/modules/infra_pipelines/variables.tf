@@ -54,7 +54,7 @@ variable "app_infra_repos" {
 variable "bucket_region" {
   description = "Region to create GCS buckets for tfstate and Cloud Build artifacts"
   type        = string
-  default     = "us-central1"
+  default     = "asia-southeast1"
 }
 
 variable "terraform_apply_branches" {

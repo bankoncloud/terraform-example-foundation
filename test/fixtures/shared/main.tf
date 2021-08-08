@@ -16,8 +16,8 @@
 
 module "shared" {
   source                            = "../../../3-networks/envs/shared"
-  default_region1                   = "us-central1"
-  default_region2                   = "us-west1"
+  default_region1                   = "asia-southeast1"
+  default_region2                   = "asia-southeast2"
   domain                            = var.domain
   access_context_manager_policy_id  = var.policy_id
   target_name_server_addresses      = ["192.168.0.1", "192.168.0.2"]

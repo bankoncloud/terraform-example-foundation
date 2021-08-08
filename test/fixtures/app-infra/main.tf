@@ -20,7 +20,7 @@ module "app_infra_bu1_development" {
   org_id                  = var.org_id
   project_service_account = var.terraform_service_account
   folder_prefix           = var.folder_prefix
-  instance_region         = "us-west1"
+  instance_region         = "asia-southeast1"
 }
 
 module "app_infra_bu1_nonproduction" {
@@ -29,7 +29,7 @@ module "app_infra_bu1_nonproduction" {
   org_id                  = var.org_id
   project_service_account = var.terraform_service_account
   folder_prefix           = var.folder_prefix
-  instance_region         = "us-west1"
+  instance_region         = "asia-southeast1"
 }
 
 module "app_infra_bu1_production" {
@@ -38,5 +38,5 @@ module "app_infra_bu1_production" {
   org_id                  = var.org_id
   project_service_account = var.terraform_service_account
   folder_prefix           = var.folder_prefix
-  instance_region         = "us-west1"
+  instance_region         = "asia-southeast1"
 }

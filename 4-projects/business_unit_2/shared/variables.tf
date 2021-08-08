@@ -17,7 +17,7 @@
 variable "default_region" {
   description = "Default region to create resources where applicable."
   type        = string
-  default     = "us-central1"
+  default     = "asia-southeast1"
 }
 
 variable "terraform_service_account" {
