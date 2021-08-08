@@ -42,7 +42,7 @@ scc_notification_name = "scc-notify"
 //enable_hub_and_spoke = true
 
 // Configuring the Cloud Storage retention policy for logging for compliance use cases
-# log_export_storage_retention_policy = {
-#   is_locked             = false
-#   retention_period_days = 1
-# }
+log_export_storage_retention_policy = {
+  is_locked             = false # The optional step of locking a retention policy ensures that no one (including you) can shorten or remove the retention period.
+  retention_period_days = 1
+}
