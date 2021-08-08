@@ -17,8 +17,6 @@
 module "env" {
   source = "../../modules/env_baseline"
 
-  count  = var.enable_production ? 1 : 0
-
   env              = "production"
   environment_code = "p"
 

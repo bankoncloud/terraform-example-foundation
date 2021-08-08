@@ -17,8 +17,6 @@
 module "env" {
   source = "../../modules/env_baseline"
 
-  count  = var.enable_development ? 1 : 0
-
   env              = "development"
   environment_code = "d"
 
