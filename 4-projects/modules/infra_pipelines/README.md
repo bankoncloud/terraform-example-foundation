@@ -5,7 +5,7 @@
 |------|-------------|------|---------|:--------:|
 | app\_infra\_repos | A list of Cloud Source Repos to be created to hold app infra Terraform configs | `list(string)` | n/a | yes |
 | billing\_account | The ID of the billing account to associated this project with | `string` | n/a | yes |
-| bucket\_region | Region to create GCS buckets for tfstate and Cloud Build artifacts | `string` | `"us-central1"` | no |
+| bucket\_region | Region to create GCS buckets for tfstate and Cloud Build artifacts | `string` | `"asia-southeast1"` | no |
 | cloudbuild\_apply\_filename | Path and name of Cloud Build YAML definition used for terraform apply. | `string` | `"cloudbuild-tf-apply.yaml"` | no |
 | cloudbuild\_plan\_filename | Path and name of Cloud Build YAML definition used for terraform plan. | `string` | `"cloudbuild-tf-plan.yaml"` | no |
 | cloudbuild\_project\_id | The project id where the pipelines and repos should be created | `string` | n/a | yes |

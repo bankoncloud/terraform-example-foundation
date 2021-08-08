@@ -27,7 +27,7 @@ variable "vpc_type" {
 variable "region" {
   description = "The GCP region to create and test resources in"
   type        = string
-  default     = "us-central1"
+  default     = "asia-southeast1"
 }
 
 variable "num_instances" {

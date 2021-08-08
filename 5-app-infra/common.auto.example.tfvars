@@ -16,7 +16,7 @@
 
 org_id = "000000000000"
 
-instance_region = "us-central1" // should be one of the regions used to create network on step 3-networks
+instance_region = "asia-southeast1" // should be one of the regions used to create network on step 3-networks
 
 // Optional - for an organization with existing projects or for development/validation.
 // Must be the same value used in previous steps.
