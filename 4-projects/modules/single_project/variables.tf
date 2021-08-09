@@ -142,3 +142,9 @@ variable "cloudbuild_sa" {
   type        = string
   default     = ""
 }
+
+variable "workload_type" {
+  description = "The type of workloads that this project hosts - e.g. `material`, `standard`, etc. according to an FI's own classification"
+  type        = string
+  default     = "standard"
+}
