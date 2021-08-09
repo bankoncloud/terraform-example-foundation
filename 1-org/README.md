@@ -72,8 +72,7 @@ Enabling Data Access logs might result in your project being charged for the add
 For details on costs you might incur, go to [Pricing](https://cloud.google.com/stackdriver/pricing).
 You can choose not to enable the Data Access logs by setting variable `data_access_logs_enabled` to false.
 
-**Note:** This module creates a sink to export all logs to Google Storage. It also creates sinks to export a subset of security related logs
-to Bigquery and Pub/Sub. This will result in additional charges for those copies of logs.
+**Note:** This module creates a sink to export all logs to Google Storage. It also creates sinks to export a subset of security related logs to BigQuery and Pub/Sub. This will result in additional charges for those copies of logs.
 You can change the filters & sinks by modifying the configuration in `envs/shared/log_sinks.tf`.
 
 **Note:** Currently, this module does not enable [bucket policy retention](https://cloud.google.com/storage/docs/bucket-lock) for organization logs, please, enable it if needed.
@@ -102,9 +101,9 @@ FIs should configure the `log_export_storage_retention_policy` variable in `terr
 
 #### 💬 Organization Policy Constraints
 
-FIs should review `org_policy_mas_abs.tf` to review the following org-level constraints:
+In addition to the other Organization Policies, FIs should review `org_policy_mas_abs.tf` to evaluate if the following constraints are needed:
 
-- `constraints/compute.restrictNonConfidentialComputing` to restrict non-Confidential Computing resources from being created
+- `constraints/compute.restrictNonConfidentialComputing` to restrict non-Confidential Computing resources from being created (by default, this is disabled, although FIs can enable it and add specific folders or projects to be excluded from this constraint)
 - `constraints/storage.retentionPolicySeconds` to enforce Cloud Storage retention policy from a list of retention periods (by default, 1 hour and 30 days are configured)
 
 ### Deploying with Cloud Build

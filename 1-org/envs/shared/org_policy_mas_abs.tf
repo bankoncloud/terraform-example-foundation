@@ -25,8 +25,11 @@ module "confidential-computing" {
   folder_id       = local.folder_id
   policy_for      = local.policy_for
   policy_type     = "list"
-  enforce         = "true"
-  constraint      = "constraints/compute.restrictNonConfidentialComputing"
+  enforce         = "false"
+  // FIs can consider setting enforce = "true" and add exclusions instead
+  // exclude_folders   = ["folders/folder-1-id", "folders/folder-2-id"]
+  // exclude_projects  = ["project3", "project4"]
+  constraint = "constraints/compute.restrictNonConfidentialComputing"
 }
 
 // Example for CIS Control 2.3, MAS TRM 12.2.2 and ABS/B/14/Standard/2

@@ -80,12 +80,13 @@ Also make sure that you've done the following:
       Cloud organization.
    -  The `roles/billing.admin` role on the billing account.
    -  The `roles/resourcemanager.folderCreator` role.
+1. Ensure that you have requested for sufficient projects quota, as the Terraform scripts will create multiple projects from this point onwards. For more information, please [see the FAQ](https://github.com/terraform-google-modules/terraform-example-foundation/blob/master/docs/FAQ.md).
 
 If other users need to be able to run these procedures, add them to the group
 represented by the `org_project_creators` variable.
 For more information about the permissions that are required, and the resources
 that are created, see the organization bootstrap module
-[documentation.](https://github.com/terraform-google-modules/terraform-google-bootstrap)
+[documentation](https://github.com/terraform-google-modules/terraform-google-bootstrap).
 
 ### Troubleshooting
 
