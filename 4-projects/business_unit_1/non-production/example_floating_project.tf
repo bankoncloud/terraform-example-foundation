@@ -33,4 +33,5 @@ module "floating_project" {
   primary_contact   = "example@example.com"
   secondary_contact = "example2@example.com"
   business_code     = "bu1"
+  workload_type     = "standard"
 }

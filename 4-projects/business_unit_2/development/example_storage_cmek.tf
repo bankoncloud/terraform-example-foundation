@@ -35,6 +35,7 @@ module "env_secrets_project" {
   primary_contact   = "example@example.com"
   secondary_contact = "example2@example.com"
   business_code     = "bu2"
+  workload_type     = "standard"
 }
 
 data "google_storage_project_service_account" "gcs_account" {

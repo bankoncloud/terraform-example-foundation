@@ -45,6 +45,7 @@ module "project" {
     business_code     = var.business_code
     env_code          = local.env_code
     vpc_type          = var.vpc_type
+    workload_type     = var.workload_type
   }
   budget_alert_pubsub_topic   = var.alert_pubsub_topic
   budget_alert_spent_percents = var.alert_spent_percents

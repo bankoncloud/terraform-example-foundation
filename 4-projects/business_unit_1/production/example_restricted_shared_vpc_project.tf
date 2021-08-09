@@ -39,5 +39,6 @@ module "restricted_shared_vpc_project" {
   primary_contact   = "example@example.com"
   secondary_contact = "example2@example.com"
   business_code     = "bu1"
+  workload_type     = "material" # Example material workload project
 }
 
