@@ -111,6 +111,12 @@ Please refer to [troubleshooting](../docs/TROUBLESHOOTING.md) if you run into is
 **Note:** If you are using MacOS, replace `cp -RT` with `cp -R` in the relevant
 commands. The `-T` flag is needed for Linux, but causes problems for MacOS.
 
+### 💬 Updating Cloud Build Service Account IAM Roles
+
+By default, the original `example_base_shared_vpc_project.tf` comes with the `roles/editor` basic role, which may not be sufficient to deploy our example workloads. To show how FIs can modify the IAM roles, we changed the IAM roles to be more permissive only in `./business_unit_1/development/example_base_shared_vpc_project.tf`.
+
+We recommend FIs that the deployment of such infrastructure roles be done by a different team (separate from people who deploy the application workloads in the next step), and processes should be established to track such requests i.e. a maker-checker function, to meet specific MAS or ABS guidelines.
+
 ### Deploying with Cloud Build
 
 1. Clone repo.
