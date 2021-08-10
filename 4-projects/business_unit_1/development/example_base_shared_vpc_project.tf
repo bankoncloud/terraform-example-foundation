@@ -27,41 +27,12 @@ module "base_shared_vpc_project" {
   budget_amount               = var.budget_amount
   project_prefix              = var.project_prefix
   enable_hub_and_spoke        = var.enable_hub_and_spoke
+  sa_roles                    = ["roles/editor"]
   enable_cloudbuild_deploy    = true
   cloudbuild_sa               = var.app_infra_pipeline_cloudbuild_sa
-  // Review the following Cloud Build service account roles
-  // The person deploying these rules should be different from the person deploying workloads
-  sa_roles = [
-    "roles/editor",
-    "roles/compute.viewer",
-    "roles/compute.instanceAdmin.v1",
-    "roles/container.clusterAdmin",
-    "roles/container.developer",
-    "roles/iam.serviceAccountAdmin",
-    "roles/iam.serviceAccountUser",
-    "roles/resourcemanager.projectIamAdmin",
-    "roles/logging.configWriter",
-    "roles/storage.objectViewer",
-    "roles/iap.admin",
-    "roles/iam.roleAdmin",
-    "roles/binaryauthorization.policyEditor",
-    "roles/compute.securityAdmin",
-    "roles/compute.publicIpAdmin"
-  ]
   activate_apis = [
     "iam.googleapis.com",
-    "cloudresourcemanager.googleapis.com",
-    "oslogin.googleapis.com",
-    "compute.googleapis.com",
-    "container.googleapis.com",
-    "monitoring.googleapis.com",
-    "logging.googleapis.com",
-    "cloudkms.googleapis.com",
-    "secretmanager.googleapis.com",
-    "cloudbilling.googleapis.com",
-    "serviceusage.googleapis.com",
-    "storage-api.googleapis.com",
-    "servicenetworking.googleapis.com"
+    "cloudresourcemanager.googleapis.com"
   ]
 
   # Metadata
@@ -73,4 +44,3 @@ module "base_shared_vpc_project" {
   business_code     = "bu1"
   workload_type     = "standard"
 }
-
