@@ -14,9 +14,34 @@
  * limitations under the License.
  */
 
-/******************************************
- Cloud Armor policy
-*****************************************/
+## Example Cloud Armor policy attached to the MIG
+
+resource "google_compute_security_policy" "xss_policy" {
+  name    = "cloud-armor-xss-policy"
+  project = data.google_project.env_project.project_id
+  rule {
+    action   = "deny(403)"
+    priority = "1000"
+    match {
+      expr {
+        expression = "evaluatePreconfiguredExpr('xss-stable')"
+      }
+    }
+    description = "Cloud Armor policy to prevent cross-site scripting attacks."
+  }
+
+  rule {
+    action   = "allow"
+    priority = "2147483647"
+    match {
+      versioned_expr = "SRC_IPS_V1"
+      config {
+        src_ip_ranges = ["*"]
+      }
+    }
+    description = "default rule"
+  }
+}
 
 resource "google_compute_security_policy" "example_policy" {
   name    = "cloud-armor-example-policy"

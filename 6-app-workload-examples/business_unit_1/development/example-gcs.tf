@@ -18,7 +18,8 @@ locals {
   multiregion = "asia"
 }
 
-# Example GCS bucket with retention policy
+## Example GCS bucket with retention policy
+
 module "bucket" {
   source  = "terraform-google-modules/cloud-storage/google//modules/simple_bucket"
   version = "~> 1.3"
