@@ -29,11 +29,11 @@ resource "google_service_account" "compute_mig_service_account" {
 module "mig_instance_template" {
   source                 = "terraform-google-modules/vm/google//modules/instance_template"
   version                = "7.0.0"
-  machine_type           = "n2d-standard-2"
+  machine_type           = "n2d-standard-2" # Minimum for Confidential Compute VMs
   region                 = var.region
   source_image_family    = "ubuntu-1804-lts"
   source_image_project   = "ubuntu-os-cloud"
-  startup_script         = data.template_file.nginx.rendered #data.template_file.bank_of_anthos.rendered # auto setup Bank of Anthos
+  startup_script         = data.template_file.nginx.rendered
   project_id             = data.google_project.env_project.project_id
   subnetwork             = data.google_compute_subnetwork.subnetwork.self_link
   enable_confidential_vm = true
