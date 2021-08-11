@@ -44,4 +44,3 @@ module "base_shared_vpc_project" {
   business_code     = "bu1"
   workload_type     = "standard"
 }
-

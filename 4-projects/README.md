@@ -106,10 +106,16 @@ Please refer to [troubleshooting](../docs/TROUBLESHOOTING.md) if you run into is
 
 ## Usage
 
-**Note:** You need to set variable `enable_hub_and_spoke` to `true` to be able to use the **Hub-and-Spoke** architecture detailed in the **Networking** section of the [google cloud security foundations guide](https://services.google.com/fh/files/misc/google-cloud-security-foundations-guide.pdf).
+**Note:** You need to set variable `enable_hub_and_spoke` to `true` to be able to use the **Hub-and-Spoke** architecture detailed in the **Networking** section of the [Google cloud security foundations guide](https://services.google.com/fh/files/misc/google-cloud-security-foundations-guide.pdf).
 
 **Note:** If you are using MacOS, replace `cp -RT` with `cp -R` in the relevant
 commands. The `-T` flag is needed for Linux, but causes problems for MacOS.
+
+### 💬 Establishing Processes for Changes to Cloud Build Service Account IAM Roles and Activated Google APIs
+
+By default, the original `example_base_shared_vpc_project.tf` comes with the `roles/editor` basic role and a limited scope of Google APIs, which may not be sufficient to deploy other workloads like GKE or Cloud SQL. FIs can modify the IAM roles `sa_roles` in these example files to grant more IAM roles, and the list of activated Google APIs `activate_apis`, while keeping the [principle of least privilege](https://cloud.google.com/iam/docs/using-iam-securely) in mind.
+
+We recommend FIs that the deployment of such infrastructure roles be done by a different team (separate from people who deploy the application workloads in the next step), and processes should be established to track such requests i.e. a maker-checker function, to meet specific MAS or ABS guidelines.
 
 ### Deploying with Cloud Build
 
