@@ -28,3 +28,19 @@ We created the following example workloads:
 - [Managed Instance Groups](https://cloud.google.com/compute/docs/instance-groups) with [External HTTP Load Balancer](https://cloud.google.com/load-balancing/docs/https) to expose private instances, and [Cloud Armor](https://cloud.google.com/armor) XSS and SQL injection policies enabled
 - [GKE Safer Cluster](https://registry.terraform.io/modules/terraform-google-modules/kubernetes-engine/google/latest/submodules/safer-cluster) for a safer-than-default GKE configuration
 - [Cloud Pub/Sub](https://cloud.google.com/pubsub) and [Cloud Asset Inventory](https://cloud.google.com/asset-inventory) feeds to detect creation of service accounts for further investigation or remediative actions
+- [Cloud Storage](https://cloud.google.com/storage) bucket with storage retention policy enabled and [Bucket Lock](https://cloud.google.com/storage/docs/bucket-lock) disabled by default
+
+
+We recommend reviewing the scripts to understand how you can use them to deploy workloads that could help to meet regulatory requirements.
+
+As an example:
+
+> FIs should be aware that their cloud workloads are not resilient by virtue of being in the public cloud. For cloud workloads that require high availability, it is the FI’s responsibility to ensure that the CSP has appropriate cloud redundancy or fault-tolerant capability (e.g. use of the auto-scaling feature to enable auto-recovery of failed services) and that the appropriate features are enabled for the cloud workloads. Cloud workloads could also be deployed in multiple geographically separated data centres (e.g. “zones” or “regions”) to mitigate location-specific issues that may disrupt the delivery of public cloud services.
+>
+> – [MAS Advisory on Addressing the Technology and Cyber Security Risks Associated with Public Cloud Adoption](https://www.mas.gov.sg/-/media/MAS/Regulations-and-Financial-Stability/Regulatory-and-Supervisory-Framework/Risk-Management/Cloud-Advisory.pdf)
+
+To demonstrate that Google Cloud has the capabilities to help FIs meet this requirement, the Managed Instance Group (see `example-mig.tf`) and the GKE Safer Cluster (see `example-gke-safer-cluster.tf`) example deployments show how FIs have to make use of regions and zones variables, as well as autoscaling policies, to deploy highly available workloads across multiple regions or zones.
+
+## Usage
+
+The scripts can be placed in the same `bu1-example-app` repository created in the earlier steps.
