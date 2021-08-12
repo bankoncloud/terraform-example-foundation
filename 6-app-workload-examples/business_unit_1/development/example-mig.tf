@@ -38,6 +38,10 @@ module "mig_instance_template" {
   subnetwork             = data.google_compute_subnetwork.subnetwork.self_link
   enable_confidential_vm = true
   tags                   = ["egress-internet", "allow-lb"]
+  labels = {
+    environment    = "dev",
+    classification = "material" # Example only
+  }
   service_account = {
     email  = google_service_account.compute_mig_service_account.email
     scopes = ["compute-rw"]
