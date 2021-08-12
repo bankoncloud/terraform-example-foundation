@@ -39,4 +39,4 @@ To demonstrate that Google Cloud has the capabilities to help FIs meet this requ
 
 ## Usage
 
-The scripts can be placed in the same `bu1-example-app` repository created in the earlier steps.
+The scripts can be placed in the same `bu1-example-app` repository created in the earlier steps. **Please also enable the relevant Google APIs and grant the necessary IAM roles to the Cloud Build service account created in `4-projects`!**
