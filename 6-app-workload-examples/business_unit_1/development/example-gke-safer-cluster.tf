@@ -48,8 +48,8 @@ module "gke" {
   source                          = "terraform-google-modules/kubernetes-engine/google//modules/safer-cluster"
   project_id                      = data.google_project.env_project.project_id
   name                            = "boa-1-cluster-${random_string.suffix.result}"
+  regional                        = true
   region                          = var.region
-  zones                           = ["${var.region}-a"]
   network_project_id              = local.network_project_id
   network                         = local.network_name
   subnetwork                      = local.subnet_name
