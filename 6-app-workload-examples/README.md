@@ -1,13 +1,9 @@
 # 6-app-workload-examples
 
 This repo is part of a multi-part guide that shows how to configure and deploy
-the example.com reference architecture described in
-[Google Cloud security foundations guide](https://services.google.com/fh/files/misc/google-cloud-security-foundations-guide.pdf)
-(PDF). The following table lists the parts of the guide.
+the example.com reference architecture described in our landing zone for Singapore-based financial institutions. The following table lists the parts of the guide.
 
-For an overview of the architecture and the parts, see the
-[terraform-example-foundation README](https://github.com/terraform-google-modules/terraform-example-foundation)
-file.
+This part is an extension to the Google Cloud security foundations.
 
 ## Purpose
 
